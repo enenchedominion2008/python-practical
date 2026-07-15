@@ -16,6 +16,11 @@ if age % 2 == 0:
     parity = "even"
 else:
     parity = "odd"
+    
+if age >= 16 :
+    eligiblity = " eligible"
+else :
+    eligiblity = "not  eligible"
 
 
-print(f"welcome {name} to our website you are {age} years old and {days_old} days old and it evalutes to be {parity}")
+print(f"welcome {name.upper()} to our website you \n are {age} years old and {days_old} days old and is an {parity} number and \n it evalutes to be that you are \n {eligiblity.upper()} for the tech institute")
