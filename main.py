@@ -27,3 +27,16 @@ while name != "exit":
 
 
         print(f"welcome {name.upper()} to our website you \n are {age} years old and {days_old} days old and is an {parity} number and \n it evalutes to be that you are \n {eligiblity.upper()} for the tech institute")
+
+# here i added a calculating logic using loops and some thinkin process to calculate anything that is divisable by 3 to retrun fizz and anything divisable by 5 to return buzz but if none return fizzbuzz
+"""i = 1 
+for i in range(1, 21) :
+    
+    if i % 3 == 0 :
+        char = "fizz"
+    if i % 5 == 0 :
+        char = "buzz"
+    else :
+        char = "fizzbuzz"
+    print(f"{char} : {i}")
+    """
