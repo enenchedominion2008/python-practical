@@ -52,4 +52,9 @@ while method != "exit" :
         result = mul(first_number, second_number)
 
         print(f"result >> {result} ")
+    elif method == "exit" :
+        break
+    else :
+        print("🚫🚫  such is not part of the method of \n calculation list you can select by typing either \n (add) (sub) (div) (mul)  🚫🚫 \n ")
+        
 
