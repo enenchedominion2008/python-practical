@@ -17,10 +17,18 @@ while method != "exit" :
     if method not in ["add","sub","div","mul"] :
         print(f"🚫🚫 such << {method} >> is not part of the option list you can select by typing either \n (add) (sub) (div) (mul)  🚫🚫 \n  ")
         continue
-    
-    first_number = int(input("input your first number >> "))
-
-    second_number = int(input("input your second number >> "))
+    while True :
+        try:
+            first_number = int(input("input your first number >> "))
+            break
+        except ValueError :
+            print("\n 🚫🚫 that is not a valid  number \n you can only use numbers \n and not symbols or letters 🚫🚫 \n ")
+    while True:
+        try :
+            second_number = int(input("input your second number >> "))
+            break
+        except ValueError :
+            print("\n 🚫🚫 that is not a valid  number \n you can only use numbers \n and not symbols or letters 🚫🚫 \n ")
   
 
     if method == "add":
@@ -37,10 +45,14 @@ while method != "exit" :
         print(f"result >> {result} ")
 
     elif method == "div" :
-
-        
-
-        result = div(first_number, second_number)
+        while True :
+            try :
+                result = div(first_number, second_number)
+                break
+            except ZeroDivisionError :
+                print(" 🚫🚫\n math error try a diffrent second number \n 🚫🚫 ")
+                second_number = int(input("second number >> "))
+            
 
         print(f"result >> {result} ")
 
