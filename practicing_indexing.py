@@ -51,16 +51,19 @@ while username != "exit" :
     else :
             print(f"welcome to your account dear {username.upper()}")
 """
-
 password = input("input your password : ")
 
+# Check 1: length
+long_enough = len(password) >= 8
 
-if len(password) >= 8:
-    print("long enough")
+# Check 2: contains at least one digit
+has_digit = False
+for char in password:
+    if char.isdigit():
+        has_digit = True
+
+# Final decision: BOTH conditions must be true
+if long_enough and has_digit:
+    print("valid password")
 else:
-    print("too short")
-
-
-
-
-    
+    print("invalid password")
