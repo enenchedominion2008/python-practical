@@ -35,3 +35,9 @@ print(squares)   # [1, 4, 9, 16, 25]
 
 # Then i has no more numbers to take, so the loop stops.
 
+
+
+# a slighty more complex version with a condition
+
+evens = [i for i in range(1, 11) if i % 2 == 0]
+print(evens)   # [2, 4, 6, 8, 10]
