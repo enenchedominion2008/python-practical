@@ -15,7 +15,7 @@
 #         print(line)
 
 # week 8 practical
-name = ""
+"""name = ""
 while name != "exit" :
     name = input("input your name >> ")
     with open("week.txt","a") as file :
@@ -23,4 +23,22 @@ while name != "exit" :
 if name == "exit" :
     with open("week.txt","r") as file :
         for line in file :
-            print(line)
+            print(line)"""
+
+import json
+
+user = {
+    "name" : "dom",
+    "age" : 20
+}
+
+with open("user.json", "a") as file : 
+    json.dump(user,file)
+
+import json
+
+with open("user.json","r") as file:
+    user = json.load(file)
+print((user))
+
+    
