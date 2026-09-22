@@ -16,7 +16,7 @@ while True :
     elif option == "2" :
         with open("student.txt","r") as file :
             for line in file :
-                print(line)
+                print(line,end="")
     elif option == "3" :
         search = input("search student >> ")
         with open("student.txt","r") as file :
