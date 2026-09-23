@@ -10,9 +10,13 @@ while True :
 
     if option == "1" :
 
-        while option != "done" :
+        while True :
 
             name = input("add student names type or type 'done' to exit >> ")
+            if name.strip() == "" :
+                print("🚫🚫🚫  error name cannot be empty 🚫🚫🚫 ")
+                continue
+      
 
             if name == "done" :
 
@@ -40,7 +44,7 @@ while True :
            
            for line in file :
                
-               if line.strip() == search:
+               if line.strip().lower() == search.lower():
                    
                    found = True 
                    break 
