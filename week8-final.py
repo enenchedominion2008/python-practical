@@ -1,3 +1,6 @@
+import os 
+
+
 option = ""
 while True :
     print("welcome to the teachers dashboard kindly select an option ")
@@ -13,10 +16,6 @@ while True :
         while True :
 
             name = input("add student names type or type 'done' to exit >> ")
-            if name.strip() == "" :
-                print("🚫🚫🚫  error name cannot be empty 🚫🚫🚫 ")
-                continue
-      
 
             if name == "done" :
 
@@ -37,8 +36,14 @@ while True :
 
 
         search = input("search student >> ")
-
+     
         found = False
+        try : 
+            if os.path.exists("student.txt"):
+                continue
+        except ValueError():
+            print("this file does not exits")
+            break
 
         with open("student.txt","r") as file :
            
