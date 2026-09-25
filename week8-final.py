@@ -47,14 +47,14 @@ while True :
                     break
 
         if found:
-            print("student <<" + search + ">> found")
+            print("student   ✅ <<" + search + ">> ✅ found")
         else:
-            print("student <<" + search + ">> not found")
+            print("student not 🚫  <<" + search + ">> 🚫  found")
     elif option == "4" :
         break
     else :
         print(f"🚫🚫🚫  please \n<<<({option})>>\n is not a correct option \n please read well before \n preforming any action 🚫🚫🚫")
-
-print("work saved✅")
+ 
+print("work saved ✅ ")
 
             
