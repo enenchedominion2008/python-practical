@@ -32,31 +32,24 @@ while True :
 
                 print(line,end="")
 
-    elif option == "3" :
-
-
+    elif option == "3":
         search = input("search student >> ")
-     
-        found = False
-        try : 
-            if os.path.exists("student.txt"):
-                continue
-        except ValueError():
-            print("this file does not exits")
-            break
 
-        with open("student.txt","r") as file :
-           
-           for line in file :
-               
-               if line.strip().lower() == search.lower():
-                   
-                   found = True 
-                   break 
-        if found :
-            print("student <<"+search+">> found")
-        else :
-            print("student <<"+search+">> not found")
+        if not os.path.exists("student.txt"):
+            print("🚫🚫🚫 no students have been added yet recheck or add and cheack again 🚫🚫🚫")
+            continue
+
+        found = False
+        with open("student.txt", "r") as file:
+            for line in file:
+                if line.strip().lower() == search.lower():
+                    found = True
+                    break
+
+        if found:
+            print("student <<" + search + ">> found")
+        else:
+            print("student <<" + search + ">> not found")
     elif option == "4" :
         break
     else :
