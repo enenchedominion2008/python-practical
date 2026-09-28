@@ -29,11 +29,12 @@ class Student:
     def introduce(self) :
         print("my name is" , self.name)
         print("my age is", self.age)
-        print("i am studying computer science")
+        print("i am studying",self.course)
     def study(self):
         print(self.name,"is studying",self.course)
     def birthday(self) :
-        print(self.name,"is +1 today he is",self.age+1,"years old today")
+        self.age = self.age + 1
+        print(self.name,"is +1 today he is",self.age,"years old today")
     
 student1 = Student("Dominion",30 ,"computer science")
 student2 = Student("Divine", 50,"computer science")
