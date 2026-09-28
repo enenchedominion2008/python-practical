@@ -43,3 +43,18 @@ student1.introduce()
 student2.introduce()
 student1.study()
 student1.birthday()
+
+"""
+class Book :
+    def __init__(self,title,author):
+        self.title = title
+        self.author = author
+    def summery(self):
+        return f"{self.title} by {self.author}"
+    
+    
+story1 = Book("Animal Farm ","George Orwell")
+story2 = Book("the bad boy","john")
+print(story1.summery())
+print(story2.summery())
+"""
