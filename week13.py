@@ -16,12 +16,22 @@ print(next(my_iterator))   # crashes: StopIteration"""
 # A generator is a special kind of function that doesn't run start-to-finish in one go — it can pause, hand back a value, and later resume exactly where it left off. The keyword that makes this happen is yield, used instead of return
 
 
-def count_up_to(n):
-    i = 1
-    while i <= n:
-        yield i
-        i += 1
-counter = count_up_to(3)
-print(next(counter))   # 1
-print(next(counter))   # 2
-print(next(counter))   # 3
+# def count_up_to(n):
+#     i = 1
+#     while i <= n:
+#         yield i
+#         i += 1
+# counter = count_up_to(3)
+# print(next(counter))   # 1
+# print(next(counter))   # 2
+# print(next(counter))   # 3
+
+# def squares_list(n):
+#     result = []
+#     for i in range(1, n + 1):
+#         result.append(i * i)
+#     return result   # builds the ENTIRE list in memory, all at once
+
+# def squares_generator(n):
+#     for i in range(1, n + 1):
+#         yield i * i   # produces ONE value at a time, on demand
