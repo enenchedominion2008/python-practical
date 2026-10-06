@@ -1,10 +1,24 @@
-# def make_multiplier(factor):
-#     def multiply(number):
-#         return number * factor
-#     return multiply
+# def shout(func):
+#     def wrapper():
+#         result = func()
+#         return result.upper()
+#     return wrapper
 
-# double = make_multiplier(2)
-# triple = make_multiplier(3)
+# @shout
+# def greet():
+#     return "hello"
 
-# print(double(5))   # 10
-# print(triple(5))   # 15
+# print(greet())   # HELLO
+
+# decorators
+def loud(func):
+    def wrapper():
+        result = func()
+        print(result.upper())
+    return wrapper
+
+@loud
+def greet():
+    return "dominion"
+
+greet()
