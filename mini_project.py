@@ -38,9 +38,14 @@ def add_student():
     email = input("Input your email: ")
     thesis_topic = input("Input your specialization: ")
 
-    new_student = GraduateStudent(
-        name, age, course, email, thesis_topic
-    )
+  
+    if thesis_topic == "":
+        new_student = Student(name, age, course, email)
+    else :
+        new_student = GraduateStudent(
+            name, age, course, email, thesis_topic
+        )
+    
 
     students.append(new_student)
     print("Student added successfully!")
