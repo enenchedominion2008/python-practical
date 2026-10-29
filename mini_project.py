@@ -36,7 +36,7 @@ def add_student():
     while True :
         try :
             age = int(input("input your age : "))
-            if age < 0 :
+            if age <= 0 :
                 print("age cannot be nagative 0 chose another number")
                 continue
         except ValueError :
@@ -61,9 +61,29 @@ def add_student():
     print("Student added successfully!")
 
 
-add_student()
 
-for s in students:
-    print(s.introduce())
 
-print("Total students:", len(students))
+
+def view_students():
+
+    for s in students:
+        print(s.introduce())
+    print("Total students:", len(students))
+def main():
+    while True :
+        print("(1) add student")
+        print("(2) view student")
+        print("(3) exit")
+        choice =input("choose >> ")
+        if choice == "1" :
+            add_student()
+        elif choice == "2" :
+            view_students()
+        elif choice == "3" :
+            break
+        else:
+            print("=== this is not part of the option please select from 1 - 3 ====")
+
+
+
+   
