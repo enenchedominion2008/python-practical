@@ -33,13 +33,23 @@ class GraduateStudent(Student):
 
 def add_student():
     name = input("Input your name: ")
-    age = int(input("Input your age: "))
+    while True :
+        try :
+            age = int(input("input your age : "))
+            if age < 0 :
+                print("age cannot be nagative 0 chose another number")
+                continue
+        except ValueError :
+            print("====== age cannot be a letter pls input a number ======")
+            continue
+        break
+
     course = input("Input your course of study: ")
     email = input("Input your email: ")
     thesis_topic = input("Input your specialization: ")
 
   
-    if thesis_topic == "":
+    if thesis_topic.strip() == "":
         new_student = Student(name, age, course, email)
     else :
         new_student = GraduateStudent(
