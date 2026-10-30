@@ -65,24 +65,34 @@ def add_student():
 
 
 def view_students():
-
     for s in students:
         print(s.introduce())
     print("Total students:", len(students))
+
+def search_student():
+    search = input("search for student >> ")
+    if search in students :
+        print(f"found <<{search}>>")
+    else :
+        print(f"name <<{search}>> not found")
 def main():
     while True :
         print("(1) add student")
         print("(2) view student")
-        print("(3) exit")
-        choice =input("choose >> ")
+        print("(3) search student")
+        print("(4) exit")
+        choice = input("choose >> ")
         if choice == "1" :
             add_student()
         elif choice == "2" :
             view_students()
         elif choice == "3" :
+            search_student()
+        elif choice == "4":
             break
         else:
             print("=== this is not part of the option please select from 1 - 3 ====")
+main()
 
 
 
