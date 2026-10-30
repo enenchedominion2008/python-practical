@@ -68,13 +68,15 @@ def view_students():
     for s in students:
         print(s.introduce())
     print("Total students:", len(students))
-
 def search_student():
-    search = input("search for student >> ")
-    if search in students :
-        print(f"found <<{search}>>")
-    else :
-        print(f"name <<{search}>> not found")
+    search = input("search for student >> ").strip().lower()
+    found = False
+    for s in students:
+        if s.name.strip().lower() == search:
+            print(f" <<<{search}>>> found succesfully")
+            found = True
+    if not found:
+        print("no student found")
 def main():
     while True :
         print("(1) add student")
