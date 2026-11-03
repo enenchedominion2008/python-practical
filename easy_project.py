@@ -14,7 +14,17 @@ while True:
     print("(2) move")
     print("(3) quit")
     options = input("choose >> ")
-    if options == "3" :
+    if options.strip() == "3" :
         print('GAME OVER')
         break
-    if options == "1 "
+    if options  not in ("1","2","3") :
+        energy -= 1
+        if energy < 1 :
+            print("you are out of energy")
+            print("GAME OVER")
+            break
+        print("you typed an invalid input and your energy has been cosumed choose the correct option")
+        print(f"current enegry >> {energy}")
+    if options.strip() == "1" :
+        print(f"current location === {location} ===")
+        print(f"a beautiful beach\n with birds flying over the waters moving with the waves\n accompanied by a soft breeze")
