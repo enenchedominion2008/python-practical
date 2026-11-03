@@ -4,6 +4,10 @@ print(f"<<<< welcome {name.capitalize()} \n your adventure begins >>>>")
 energy = 5
 location = "Beach"
 inventory = []
+print("current player status")
+print(f"-------- enegry >> {energy} ----------")
+print(f"------- current location >> {location} --------")
+print(f"--------inventory >> {len(inventory)} ---------")
 while True:
     print(f"current location {location} current energy {energy}")
     print("(1) look around")
@@ -13,3 +17,4 @@ while True:
     if options == "3" :
         print('GAME OVER')
         break
+    if options == "1 "
