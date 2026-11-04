@@ -1,16 +1,16 @@
 connections = {
-    "Beach": ["Jungle"],
-    "Jungle": ["Beach", "Cave"],
-    "Cave": ["Jungle", "Old Bridge"],
-    "Old Bridge": ["Cave", "Lighthouse"],
-    "Lighthouse": ["Old Bridge"]
+    "beach": ["jungle"],
+    "jungle": ["beach", "cave"],
+    "cave": ["jungle", "old bridge"],
+    "old bridge": ["cave", "lighthouse"],
+    "lighthouse": ["old bridge"]
 }
 
 print("====== Welcome to A Lost Island!\n The shorelines are vast, the secrets are deep, and your survival story starts right now.\n Whether you are here to map out uncharted territories, uncover ancient mysteries,\n or simply survive the night, a grand adventure awaits you.\n Keep your wits sharp, explorer—the island is watching! ========")
 name = input("YOUR NAME: ")
 print(f"<<<< welcome {name.capitalize()} \n your adventure begins >>>>")
 limit = 5
-location = "Beach"
+location = "beach"
 inventory = []
 print("current player status")
 print(f"--------inventory >> {len(inventory)} ---------")
@@ -32,17 +32,32 @@ current location <<<{location}>>>
         print("Waves crash softly against the shore as gulls cry overhead.")
         print("A rusted lantern lies half-buried in the sand, its glass still intact.")
         print(">>> HINT: That lantern might be useful later. <<<")
-    elif option == "2" :
-       print(f"""where do you want to go to"
-       (1) Jungle
-       (2) Cave
-       (3) Old Bridge
-       (4)Lighthouse
-       (5) Beach""")
-       location = input("choose where you want to go to: ")
-        print("not among the options please choose the correct option")
-        continue
-       destinations = connections[location]
-       print(destinations)
+    elif option == "2":
+        destinations = connections[location]
+
+        print("Available destinations:")
+
+        number = 1
+        for place in destinations:
+            print(number, place)
+            number += 1
+            try:
+                choice = input("Choose your number >> ").strip()
+
+                if choice.isdigit():
+                    choice = int(choice)
+
+                    if 1 <= choice <= len(destinations):
+                        selected = destinations[choice - 1]
+                        print(f"You selected {selected}")
+                    else:
+                        print("Invalid destination number!")
+
+                else:
+                    print("Choose a number, not a letter!")
+
+            except ValueError:
+                print("Invalid input!")
+        
     else :
         print("== you are puting the wrong input pls select the correct option")
