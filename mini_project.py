@@ -72,8 +72,9 @@ def search_student():
     search = input("search for student >> ").strip().lower()
     found = False
     for s in students:
-        if s.name.strip().lower() == search:
+        if search in s.name.strip().lower():
             print(f" <<<{search}>>> found succesfully")
+            print(s.introduce())
             found = True
     if not found:
         print("no student found")
